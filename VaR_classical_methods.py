@@ -76,6 +76,7 @@ mean = df["return_adjclose"].mean()
 s = df["return_adjclose"].dropna()
 sp.probplot(s, dist=sp.norm, plot=plt.figure().add_subplot(111))
 #noto che ci sono delle code grasse, pertanto provo con una distribuzione t-student
+
 #ottengo parametri gradi di libertà, media e std.deviation:
 tdf, tmean, tsigma = sp.t.fit(s)    
 sp.probplot(s, dist=sp.t, sparams=(tdf, tmean, tsigma), plot=plt.figure().add_subplot(111))
@@ -86,7 +87,8 @@ sp.probplot(s, dist=sp.norm, plot=ax1)
 sp.probplot(s, dist=sp.t, sparams=(tdf, tmean, tsigma), plot=ax2)
 fig.suptitle("Differenze distribuzioni  sopra:Normale - sotto:t-Student")
 #la distribuzione t-student fitta meglio i dati
-#possiamo vederlo anche dal seguente grafico:
+
+#Dal seguente grafico possiamo osservare la differenza nella capacità di fit delle due distribuzioni:
 support = np.linspace(df["return_adjclose"].min(), df["return_adjclose"].max(), 100)
 plt.hist(df["return_adjclose"],bins=40, density=True, alpha=0.5)
 plt.plot(support, sp.t.pdf(support, loc=tmean, scale=tsigma, df=tdf), "r-", label="t-Student")
