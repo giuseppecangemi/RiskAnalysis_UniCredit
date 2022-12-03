@@ -6,19 +6,14 @@ Created on Sat Dec  3 18:35:06 2022
 @author: giuseppecangemi
 """
 import numpy as np
-import pandas as pd
-import scipy.stats as sp
 import matplotlib.pyplot as plt
-import seaborn as sns
+#df e ulteriori librerie dallo script sul calcolo del VaR classico
 
-from pyrandwalk import *
-
-#df dallo script sul calcolo del VaR classico
 
 days = 365   # considero un anno
 dt = 1/float(days)
 sigma = 0.0293 # volatilità
-mu = 0.05  # drift 
+mu = 0.05  # drift positivo
 
 
 def randomwalk(startprice):
