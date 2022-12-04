@@ -31,11 +31,11 @@ for simul in range(40):
     plt.xlabel("Time")
     plt.ylabel("Price")
 
-runs = 10000
+iter = 10000
 simulations = np.zeros(runs)
 
-for run in range(runs):
-    simulations[run] = randomwalk(12.536)[days-1]
+for j in range(iter):
+    simulations[j] = randomwalk(12.536)[days-1]
 q = np.percentile(simulations, 5)
 plt.hist(simulations, density=True, bins=30, alpha=0.5)
 plt.axvline(x=q, linewidth=3, color="r")
