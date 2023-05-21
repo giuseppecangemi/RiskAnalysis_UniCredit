@@ -82,6 +82,6 @@ plt.legend()
 plt.grid()
 plt.show()
 
-# Problema: il var del t-student è piu basso della Normale. Questo non può essere vero, \\
+# Problema: il var del t-student è piu basso della Normale. Questo non può essere vero \\
 # perché nell'analisi precedente il var t-student era più grande.
 # Probabilmente stimando media e std su t e t-1, la stima si avvicina più ad una normale.
